@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ödev.Taşıt_Kredisi"
+             Title="Taşıt Kredisi">
+
+    <ContentPage.Resources>
+        <Style TargetType="Label" x:Key="Baslik">
+            <Setter Property="TextColor" Value="Red"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="HorizontalOptions" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Label" x:Key="lbl">
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="VerticalOptions" Value="Center"/>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="White"/>
+        </Style>
+        <Style TargetType="Editor">
+            <Setter Property="BackgroundColor" Value="White"/>
+        </Style>
+    </ContentPage.Resources>
+
+
+    <Grid RowDefinitions="Auto,*">
+        <Label Text="" Grid.Row="0" Grid.Column="0" Style="{StaticResource Baslik}"/>
+
+        <Grid Grid.Row="1" ColumnDefinitions="Auto,*" ColumnSpacing="10" RowSpacing="5" Margin="20"
+          RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+
+            <Label Grid.Row="0" Text="Kredi Tutarı(TL)" Style="{StaticResource lbl}"/>
+            <Label Grid.Row="1" Text="Faiz Oranı(%)" Style="{StaticResource lbl}"/>
+            <Label Grid.Row="2" Text="Vade(Ay)" Style="{StaticResource lbl}"/>
+
+
+            <Entry x:Name="kredi_tutari" Placeholder="Tutarı" Grid.Column="1" Grid.Row="0"/>
+            <Entry x:Name="faiz_orani" Placeholder="Faizi" Grid.Column="1" Grid.Row="1"/>
+            <Entry x:Name="vade_ay" Placeholder="Vadesi" Grid.Column="1" Grid.Row="2"/>
+
+            <Grid Grid.Row="4" Grid.ColumnSpan="1"
+              ColumnDefinitions="*">
+                <Button Text="Hesapla" Clicked="Button_Clicked"/>
+
+            </Grid>
+        </Grid>
+
+        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*">
+            <Label Grid.Row="0" Text="Aylık Taksit: " />
+            <Label Grid.Column="1" Grid.Row="0" x:Name="taksittutari"/>
+            <Label Grid.Row="1" Text="Toplam Ödeme: " />
+            <Label Grid.Row="1" Grid.Column="1" x:Name="topödeme" />
+            <Label Grid.Row="2" Text="Toplam Faiz:" />
+            <Label Grid.Row="2" Grid.Column="1" x:Name="topfaiz" />
+        </Grid>
+
+    </Grid>
+
+
+</ContentPage>

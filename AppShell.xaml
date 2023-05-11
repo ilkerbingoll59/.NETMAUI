@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="ödev.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ödev"
+    Shell.FlyoutBehavior="Flyout">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        
+    <ShellContent
+        Icon="home.png"
+        Title="Ana Sayfa"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+   
+    <Tab Title="Kredi Hesaplamaları"
+         Icon="hesap.png">
+            <ShellContent
+                Icon="hesap.png"
+                Title="İhtiyaç Kredisi" ContentTemplate="{DataTemplate local:KrediHesaplama}"
+                />
+            <ShellContent 
+             Icon="hesap.png"
+            Title="Konut Kredisi" ContentTemplate="{DataTemplate local:Konut_Kredisi}" 
+                />
+            <ShellContent
+                Icon="hesap.png"
+                Title="Taşıt Kredisi" ContentTemplate="{DataTemplate local:Taşıt_Kredisi}" 
+                />
+            <ShellContent
+                Icon="hesap.png"
+                Title="Ticari Kredisi" ContentTemplate="{DataTemplate local:Ticari_Kredisi}"
+                />
+
+        </Tab>
+        <ShellContent
+            Icon="health.png"
+            Title="Vücut Kitle İndeksi" ContentTemplate="{DataTemplate local:VucutKitleIndexi}"
+            />
+        <ShellContent
+            Icon="todo.png"
+            Title="Yapılacaklar Listesi" ContentTemplate="{DataTemplate local:ToDoList}"
+            />
+    </FlyoutItem>
+
+</Shell>
